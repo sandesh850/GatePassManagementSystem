@@ -39,6 +39,12 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 20px rgba(79,70,229,0.3);
 }
 
+@media (max-width:426px) {
+    .MainBoarder {
+        width: 100%
+    }
+}
+
 /*Login page styles*/
 .MainLoginIconStyle {
     width:60px;
@@ -51,8 +57,43 @@ body {
     box-shadow: 0 20px 50px rgba(99,102,241,0.3);
 }
 
+
+
 .lblstyles {
     color: gray;
     opacity:60%;
     font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .lastLabel01 {
+        display: flex;
+        align-items: flex-end; /* aligns content vertically at the bottom */
+        justify-content: flex-end; /* aligns content horizontally to the right */
+    }
+}
+
+@media (min-width: 1024px) {
+    .lastLabel01 {
+        display: flex;
+        align-items: flex-end; /* aligns content vertically at the bottom */
+        justify-content: flex-end; /* aligns content horizontally to the right */
+    }
+}
+
+
+@media (min-width: 768px) {
+    .lastLabel02 {
+        display: flex;
+        align-items: flex-start; /* aligns content vertically at the bottom */
+        justify-content: flex-start; /* aligns content horizontally to the right */
+    }
+}
+
+@media (min-width: 1024px) {
+    .lastLabel02 {
+        display: flex;
+        align-items: flex-start; /* aligns content vertically at the bottom */
+        justify-content: flex-start; /* aligns content horizontally to the right */
+    }
 }
