@@ -2,7 +2,98 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="container text-center d-flex justify-content-center" style="margin-top:10%">
+    <!--row 1 | boarder-->
+    <div class="row MainBoarder">
+
+        <!--row 2 | icon-->
+        <div class="row d-flex justify-content-center" style="padding-top:10%">
+
+            <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 MainLoginIconStyle">
+                <!-- SHIELD ICON -->
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="40" height="40"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="white"
+                     stroke-width="2">
+    
+                    <!-- Shield shape -->
+                    <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
+    
+                    <!-- Inner check line -->
+                    <path d="M9 12l2 2 4-4" />
+                </svg>
+
+            </div>
+        </div>
+
+        <!--row 2 | Topic-->
+        <div class="row" style="padding-top:3%">
+
+            <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                <div>
+                    <label style="font-weight:bold;font-size:140%">GATE PASS MANAGEMENT SYSTEM</label>
+                </div>
+            </div>
+        </div>
+
+        <!--row 3 | sub label-->
+        <div class="row" style="padding-top:1%">
+
+            <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                <div>
+                    <label style="color:gray; font-size:100%">Internal Security Portal</label>
+                </div>
+            </div>
+        </div>
+
+        <!--row 4 | username-->
+        <div class="row text-start" style="padding-top:1%">
+
+            <!--lblusername-->
+            <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                <div>
+                    <label style="font-size:90%" class="lblstyles">USERNAME (EPF)</label>
+                </div>
+            </div>
+          
+        </div>
+
+        <!--row 4 | username-->
+        <div class="row" style="padding-top:1%">
+            <!--tbxusername-->
+            <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                <div>
+                    <input type="text" class="form-control" placeholder="Enter EPF Number" />
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--row 4 | password-->
+        <div class="row text-start" style="padding-top:3%">
+
+            <!--lblpassword-->
+            <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                <div>
+                    <label style="font-size:90%" class="lblstyles">PASSWORD</label>
+                </div>
+            </div>
+          
+        </div>
+
+        <!--row 4 | password-->
+        <div class="row" style="padding-top:1%">
+            <!--tbxpassword-->
+            <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                <div>
+                    <input type="text" class="form-control" placeholder="Enter Password" />
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

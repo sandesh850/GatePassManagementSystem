@@ -29,3 +29,30 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/*Main boarder style that use for every card view*/
+.MainBoarder {
+    border-style: solid;
+    border-radius: 25px;
+    border-color: white;
+    width: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 20px rgba(79,70,229,0.3);
+}
+
+/*Login page styles*/
+.MainLoginIconStyle {
+    width:60px;
+    height: 60px;
+    background-color: #4f46e5;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgba(99,102,241,0.3);
+}
+
+.lblstyles {
+    color: gray;
+    opacity:60%;
+    font-weight: bold;
+}
