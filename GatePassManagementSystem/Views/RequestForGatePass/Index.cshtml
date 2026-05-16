@@ -1,0 +1,153 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!--Request for gate pass-->
+<form>
+
+    <div class="container text-center d-flex justify-content-center" style="margin-top:6%">
+
+        <!--row 1 | boarder-->
+        <div class="row MainBoarder">
+
+            <!--row 2 | icon-->
+            <div class="row d-flex justify-content-center" style="padding-top:6%">
+
+                <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12 MainLoginIconStyle">
+
+                   
+                    <!-- GATE PASS ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="60px"
+                         height="50px"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="white"
+                         stroke-width="1"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <!-- Ticket Shape -->
+                        <path d="M7 8H17V10
+                        C18.2 10 19 10.8 19 12
+                        C19 13.2 18.2 14 17 14
+                        V16H7V14
+                        C5.8 14 5 13.2 5 12
+                        C5 10.8 5.8 10 7 10V8Z" />
+
+                        <!-- Center Dashed Line -->
+                        <path d="M12 9V15" stroke-dasharray="1.5 1.5" />
+
+                    </svg>
+
+                   @*  <!-- GATE PASS ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="60px"
+                         height="50px"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="white"
+                         stroke-width="1.2">
+
+                        <!-- Ticket Shape -->
+                        <path d="M7 8H17V10
+                        C18.2 10 19 10.8 19 12
+                        C19 13.2 18.2 14 17 14
+                        V16H7V14
+                        C5.8 14 5 13.2 5 12
+                        C5 10.8 5.8 10 7 10V8Z" />
+
+                       <!-- Center Dashed Line -->
+                        <path d="M12 9V15" stroke-dasharray="1.5 1.5" />
+
+                    </svg> *@
+
+                </div>
+            </div>
+
+
+            <!--row 2 | Topic-->
+            <div class="row" style="padding-top:3%">
+
+                <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                    <label style="font-weight:bold;font-size:140%">Request For Gate Pass</label>
+                </div>
+
+            </div>
+
+            <!-- row 3 | EPF Number-->
+            
+            <div class="row text-start" style="padding-top:3%;width:95%">
+
+                <!--lblEpfNumber-->
+                <div class="col-md-1"> </div>
+
+                <div class="col-11 col-sm-12 col-md-12 col-xl-11 col-xxl-11 lblResponsiveness">
+                    <div>
+                        <label style="font-size:90%;font-weight:normal" class="lblstyles" >EPF Number</label>
+                    </div>
+                </div>
+
+                <div class="col-md-1"> </div>
+          
+            </div>
+
+            <!--row 3 | EPF Number-->
+            <div class="row tbxWidth" style="padding-top:1%;">
+                <!--tbxEPFNumber-->
+                <div class="col-md-1"></div>
+                <div class="col-12 col-sm-12 col-md-12 col-xl-11 col-xxl-11">
+                    <div class="position-relative">
+                        <input type="text" class="form-control ps-5" style="font-size:100%;opacity:60%" placeholder="Enter EPF Number">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
+                             class="position-absolute top-50 start-0 translate-middle-y ms-2"
+                             viewBox="0 0 24 24">
+                            <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z" />
+                        </svg>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <!-- row 4 | Reason-->
+            
+            <div class="row text-start" style="padding-top:3%;width:95%">
+
+                <!--lblReason-->
+                <div class="col-md-1"> </div>
+
+                <div class="col-11 col-sm-12 col-md-12 col-xl-11 col-xxl-11 lblResponsiveness">
+                    <div>
+                        <label style="font-size:90%;font-weight:normal" class="lblstyles">Reason</label>
+                    </div>
+                </div>
+
+                
+          
+            </div>
+
+            <!--row 4 | Reason-->
+            <div class="row" style="padding-top:1%;">
+
+                <div class="col-md-1>"></div>
+                <div class="col-12 col-sm-12 col-md-11 col-xl-11 col-xxl-11 MyCodedropdown">
+                    <select class="form-select MyCodedropdownWidth">
+                        <option selected>Select Reason</option>
+                        <option>Reason 1</option>
+                        <option>Reason 1</option>
+                        <option>Reason 1</option>
+                    </select>
+                </div>
+               
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+</form>

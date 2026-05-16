@@ -168,3 +168,31 @@ body {
         margin-left: 1%
     }
 }
+
+/*Drop down width and responsiveness*/
+.MyCodedropdown {
+   
+    padding-left: 10%;
+}
+
+@media(max-width:376px){
+    .MyCodedropdown {
+        padding-left: 9%;
+    }
+}
+
+@media(max-width:426px) {
+    .MyCodedropdown {
+        padding-left: 8%;
+    }
+}
+
+.MyCodedropdownWidth {
+    width: 104%;
+}
+
+@media(max-width:1025px) {
+    .MyCodedropdownWidth {
+        width: 110%;
+    }
+}
