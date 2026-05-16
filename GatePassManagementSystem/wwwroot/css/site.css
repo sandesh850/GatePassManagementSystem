@@ -169,30 +169,38 @@ body {
     }
 }
 
-/*Drop down width and responsiveness*/
-.MyCodedropdown {
-   
-    padding-left: 10%;
+/*Drop down width*/
+
+.MyCodedropdownWidth {
+    width: 95%;
 }
 
-@media(max-width:376px){
-    .MyCodedropdown {
-        padding-left: 9%;
+@media(max-width:321px) {
+    .MyCodedropdownWidth {
+        width: 107%;
+    }
+}
+
+@media(max-width:376px) {
+    .MyCodedropdownWidth {
+        width: 106%;
     }
 }
 
 @media(max-width:426px) {
-    .MyCodedropdown {
-        padding-left: 8%;
+    .MyCodedropdownWidth {
+        width: 104%;
     }
 }
 
-.MyCodedropdownWidth {
-    width: 104%;
+@media(max-width:769px) {
+    .MyCodedropdownWidth {
+        width: 104%;
+    }
 }
 
 @media(max-width:1025px) {
     .MyCodedropdownWidth {
-        width: 110%;
+        width: 104%;
     }
 }
