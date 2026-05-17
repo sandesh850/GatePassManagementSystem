@@ -1,4 +1,22 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+//Request for Gate Pass Page
+function checkBox() {
 
-// Write your JavaScript code.
+    if ($("#checkStatus").is(":checked")) {
+
+        $("#LblVehicleNo").html('<div>'+
+            '<label style = "font-size:90%;color:blue"> VEHICLE NUMBER</label>'+
+            '</div>');
+
+
+
+        $("#VehicleNo").html('<div class="position-relative">'+
+            '<input type = "text" class= "form-control" style = "font-size:100%;opacity:60%" placeholder = "e.g. ABC - 1234" >'+
+            '</div>');    
+            
+    }
+    else {
+        $("#LblVehicleNo").html('');
+        $("#VehicleNo").html('');
+    }
+}
