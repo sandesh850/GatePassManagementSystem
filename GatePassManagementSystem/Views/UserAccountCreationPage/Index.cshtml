@@ -1,0 +1,317 @@
+﻿<form>
+
+    <!--Container 1-->
+    <div class="container text-center d-flex justify-content-center" style="margin-top:6%">
+
+        <!--row 1 | boarder-->
+        <div class="row MainBoarder">
+
+            <!--row 2 | main icon-->
+            <div class="row d-flex justify-content-center" style="padding-top:10%">
+                <div style="
+                    width:80px;
+                    height:80px;
+                    background-color:#4f46e5;
+                    border-radius:40px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+                    ">
+                    <!-- USER PLUS ICON -->
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="40" height="40"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="white"
+                         stroke-width="2">
+
+                        <!-- User -->
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+
+                        <!-- Plus sign -->
+                        <line x1="20" y1="8" x2="20" y2="14" />
+                        <line x1="17" y1="11" x2="23" y2="11" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <!--row 3 | Topic-->
+            <div class="row" style="padding-top:3%">
+
+                <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                    <label style="font-weight:bold;font-size:140%">Create User Account</label>
+                </div>
+
+            </div>
+
+
+            <!--row 4 | sub label-->
+            <div class="row" style="padding-top:1%">
+
+                <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                    <div>
+                        <label style="color:gray; font-size:100%">EMPLOYEE PHOTO</label>
+                    </div>
+                </div>
+            </div>
+
+            <!--row 5 | to Preview Circle-->
+            <div class="row">
+
+                <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                    <div class="d-flex justify-content-center mt-3">
+
+                        <div class="photo-container">
+
+                            <!-- Preview Image -->
+                            <img id="previewImage"
+                                 src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                 alt="photo">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--row 6 | Browse photo button-->
+            <div class="row">
+                <div class="col-12 col-sml-12 col-md-12 col-xl-12 col-xxl-12">
+                    <div class="text-center mt-3">
+
+                        <label for="photoInput" class="btn btn-light border">
+
+                            Browse Photo
+
+                        </label>
+
+                        <!-- Hidden File Input -->
+                        <input type="file"
+                               id="photoInput"
+                               accept="image/*"
+                               hidden>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--row 7 | Employee name & username (EPF)-->
+            <div class="row" style="padding-top:5%">
+
+                <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                <div class="col-5 col-md-5 col-sm-5 col-xl-5 col-xxl-5 text-start">
+                    <div>
+                        <label class="lblstyles" style="color:black">Employee Name</label>
+                    </div>
+                    <div style="padding-top:2%">
+                        <div class="position-relative">
+                            <input type="text" class="form-control ps-5" placeholder="Employee Name" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
+                                 class="position-absolute top-50 start-0 translate-middle-y ms-2"
+                                 viewBox="0 0 24 24">
+                                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z" />
+                            </svg>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                <div class="col-5 col-md-5 col-sm-5 col-xl-5 col-xxl-5 text-start">
+                    <div>
+                        <label class="lblstyles" style="color:black">Username (EPF)</label>
+                    </div>
+                    <div style="padding-top:2%">
+                        <div class="position-relative">
+                            <input type="text" class="form-control ps-5" placeholder="Enter EPF Number" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
+                                 class="position-absolute top-50 start-0 translate-middle-y ms-2"
+                                 viewBox="0 0 24 24">
+                                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+
+               
+            </div>
+
+
+            <!--row 8 | password & user roll-->
+            <div class="row" style="padding-top:5%">
+
+                <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                <div class="col-5 col-md-5 col-sm-5 col-xl-5 col-xxl-5 text-start">
+                    <div>
+                        <label class="lblstyles" style="color:black">Password</label>
+                    </div>
+                    <div style="padding-top:2%">
+                        <div class="position-relative">
+                            <input type="password" class="form-control ps-5" placeholder="Enter Password" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
+                                 class="position-absolute top-50 start-0 translate-middle-y ms-2"
+                                 viewBox="0 0 24 24">
+                                <!-- Lock icon path -->
+                                <path d="M17 8h-1V6a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v10a2
+                                2 0 0 0 2 2h10a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-5
+                                7a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-4-7V6a2 2 0 1 1 4
+                                0v2h-4z" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                <div class="col-5 col-md-5 col-sm-5 col-xl-5 col-xxl-5 text-start">
+                    <div>
+                        <label class="lblstyles" style="color:black">User Role</label>
+                    </div>
+                    <div style="padding-top:2%">
+                        <div class="position-relative">
+                            <div class="position-relative">
+                                <select class="form-select">
+                                    <option selected>Select User Role</option>
+                                    <option>Admin</option>
+                                    <option>Normal</option>
+                                    <option>Special</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+               
+            </div>
+
+
+            
+            <!--row 9| Department & user roll Type-->
+            <div class="row" style="padding-top:5%">
+
+                <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                <div class="col-5 col-md-5 col-sm-5 col-xl-5 col-xxl-5 text-start">
+                    <div>
+                        <label class="lblstyles" style="color:black">Department</label>
+                    </div>
+                    <div style="padding-top:2%">
+                        <div class="position-relative">
+                            <div class="position-relative">
+                                <select class="form-select">
+                                    <option selected>Select Department</option>
+                                    <option>Sewing</option>
+                                    <option>HR</option>
+                                    <option>Admin</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                <div class="col-5 col-md-5 col-sm-5 col-xl-5 col-xxl-5 text-start">
+                    <div>
+                        <label class="lblstyles" style="color:black">User Role Type</label>
+                    </div>
+                    <div style="padding-top:2%">
+                        <div class="position-relative">
+                            <div class="position-relative">
+                                <select class="form-select">
+                                    <option selected>Select User Role Type</option>
+                                    <option>special</option>
+                                    <option>Normal</option>
+                                   
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+               
+            </div>
+
+
+
+            <!--row 9 | Reporting supervisor & Reporting Manager-->
+            <div class="row" style="padding-top:5%">
+
+                <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                <div class="col-5 col-md-5 col-sm-5 col-xl-5 col-xxl-5 text-start">
+                    <div>
+                        <label class="lblstyles" style="color:black">Reporting Supervisor</label>
+                    </div>
+                    <div style="padding-top:2%">
+                        <div class="position-relative">
+                            <input type="password" class="form-control ps-5" placeholder="Enter Supervisor Name" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
+                                 class="position-absolute top-50 start-0 translate-middle-y ms-2"
+                                 viewBox="0 0 24 24">
+                                <!-- Lock icon path -->
+                                <path d="M17 8h-1V6a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v10a2
+                                2 0 0 0 2 2h10a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-5
+                                7a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-4-7V6a2 2 0 1 1 4
+                                0v2h-4z" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                <div class="col-5 col-md-5 col-sm-5 col-xl-5 col-xxl-5 text-start">
+                    <div>
+                        <label class="lblstyles" style="color:black">Reporting manager</label>
+                    </div>
+                    <div style="padding-top:2%">
+                        <div class="position-relative">
+                            <div class="position-relative">
+                                <select class="form-select">
+                                    <option selected>Select Reporting Manager</option>
+                                    <option>Dukantha weerasinghe</option>
+                                    <option>Yashodani Nedurana</option>
+                                    <option>Thissa Mahanpitiya</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+               
+            </div>
+
+           
+            <!--row 10 | btnCreateAccount-->
+            <div class="row" style="padding-top:4%;padding-bottom:4%">
+
+                <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+
+                    <button type="submit" class="btn btn-primary"
+                            style="font-weight:bold;width:90%; height:100%; font-size:110%; letter-spacing:2px; border-radius:15px;">
+
+                        Create Account
+
+                    </button>
+
+                </div>
+            </div>
+           
+
+        </div>
+    </div>
+
+   
+    
+</form>

@@ -20,3 +20,30 @@ function checkBox() {
         $("#VehicleNo").html('');
     }
 }
+
+/*User account creation page | Employee photo preview section*/
+document.getElementById("photoInput").addEventListener("change", function (event) {
+
+    const file = event.target.files[0];
+
+    if (file) {
+
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+
+            const image = document.getElementById("previewImage");
+
+            image.src = e.target.result;
+            image.style.width = "100%";
+            image.style.height = "100%";
+            image.style.objectFit = "cover";
+            image.style.opacity = "1";
+
+        };
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
