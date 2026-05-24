@@ -262,6 +262,13 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 20px rgba(79,70,229,0.3);
 }
 
+@media(max-width:769px) {
+
+    .PNRMainBoarder {
+        width: 100%;
+    }
+}
+
 /*use for create horizontally responsive pending request list*/
 .table-responsive {
     overflow-x: auto;
@@ -298,4 +305,43 @@ body {
     padding: 15px;
     border-radius: 15px;
     background: white;
+}
+
+/*pending Request PageSub Label Border*/
+.PNDRBorder {
+    border-color: #f59e0b;
+    border-radius: 25px;
+    border-style: solid;
+    width: 50%;
+    border-width: 1px;
+}
+
+@media(max-width:1025px) {
+
+    .PNDRBorder {
+        width: 100%;
+    }
+}
+
+@media(max-width:426px) {
+
+    .pendingrequest {
+        padding-top:10%
+    }
+}
+
+@media(max-width:426px) {
+
+    .searchButton {
+        padding-top: 3%;
+        width:100%;
+    }
+}
+
+@media(max-width:426px) {
+
+    .searchButtonwidth {
+       
+        width: 100%;
+    }
 }
