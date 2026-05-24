@@ -223,3 +223,20 @@ body {
      width: 55px;
      opacity: 0.5;
 }
+
+/*classes that use for user role drop downs in user account creation page*/
+.custom-select {
+    height: 45px;
+    padding-left: 42px;
+    border-radius: 10px;
+}
+
+.dropdown-icon {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: #6c757d;
+    z-index: 1000;
+    pointer-events: none;
+}
