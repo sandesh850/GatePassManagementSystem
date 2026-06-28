@@ -316,6 +316,15 @@ body {
     border-width: 1px;
 }
 
+.PNDRBorder02 {
+    border-color: lawngreen;
+    border-radius: 25px;
+    border-style: solid;
+    width: 100%; /* IMPORTANT FIX */
+    max-width: 180px;
+    border-width: 1px;
+}
+
 @media(max-width:1025px) {
 
     .PNDRBorder {
@@ -344,4 +353,30 @@ body {
        
         width: 100%;
     }
+}
+
+/*Guardroom page*/
+.PNRMainBoarderOFGR {
+    border-style: solid;
+    border-radius: 25px;
+    border-color: white;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 20px rgba(79,70,229,0.3);
+}
+
+
+.employee-photo {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.EmployeeInformationSubCardBoarder{
+    border-style:solid;
+    border-color:lightgray;
+    border-radius:10px;
+    border-width:2px;
 }
