@@ -1,4 +1,4 @@
-namespace GatePassManagementSystem.Models
+namespace GatePassManagementSystem.Models.ViewModels
 {
     public class ErrorViewModel
     {

@@ -1,5 +1,5 @@
 using AspNetCoreGeneratedDocument;
-using GatePassManagementSystem.Models;
+using GatePassManagementSystem.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
