@@ -11,7 +11,7 @@ namespace GatePassManagementSystem.Models.ViewModels
         public string? EmployeeName { get; set; }
 
         [Required(ErrorMessage = "Please Enter the Username(EPF)")]
-        public int? Username { get; set; }
+        public int Username { get; set; }
 
         [Required(ErrorMessage = "Please Enter the Password")]
         public string? Password { get; set; }
