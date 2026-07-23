@@ -18,6 +18,7 @@ namespace GatePassManagementSystem.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+           
             return View(new UserAccountCreationViewModel());
         }
 
@@ -30,34 +31,45 @@ namespace GatePassManagementSystem.Controllers
             }
             else
             {
-                byte[]? img = null;
-
-                if (Model.EmployeePhoto != null)
+                try
                 {
-                    using (var inputImage = new MemoryStream())
+                    byte[]? img = null;
+
+                    if (Model.EmployeePhoto != null)
                     {
-                        await Model.EmployeePhoto.CopyToAsync(inputImage);
-                        img = inputImage.ToArray();
+                        using (var inputImage = new MemoryStream())
+                        {
+                            await Model.EmployeePhoto.CopyToAsync(inputImage);
+                            img = inputImage.ToArray();
+                        }
                     }
+
+                    var TblUserAccountDetails = new TblUserAccountDetails
+                    {
+                        EmployeePhoto = img,
+                        EmployeeName = Model.EmployeeName,
+                        Username = Model.Username,
+                        Password = Model.Password,
+                        UserRole = Model.UserRole,
+                        ReportingSupervisor = Model.ReportingSupervisor,
+                        ReportingManager = Model.ReportingManager,
+                        DPM = Model.DPM,
+                        UserRoleType = Model.UserRoleType,
+                    };
+
+                    _AppDb.TblUserAccountDetails.Add(TblUserAccountDetails);
+                    await _AppDb.SaveChangesAsync();
+
+                    TempData["SuccessMessage"] = "User account created successfully!";
+
+                    return RedirectToAction("index", "UserAccountCreationPage");
                 }
-
-                var TblUserAccountDetails = new TblUserAccountDetails
+                catch(Exception ex)
                 {
-                    EmployeePhoto = img,
-                    EmployeeName = Model.EmployeeName,
-                    Username = Model.Username,
-                    Password = Model.Password,
-                    UserRole = Model.UserRole,
-                    ReportingSupervisor = Model.ReportingSupervisor,
-                    ReportingManager = Model.ReportingManager,
-                    DPM = Model.DPM,
-                    UserRoleType = Model.UserRoleType,
-                };
-
-                _AppDb.TblUserAccountDetails.Add(TblUserAccountDetails);
-                await _AppDb.SaveChangesAsync();
-
-                return RedirectToAction("index", "UserAccountCreationPage");
+                    Console.WriteLine(ex.ToString());
+                    return RedirectToAction("index", "UserAccountCreationPage");
+                }
+               
             }
 
            

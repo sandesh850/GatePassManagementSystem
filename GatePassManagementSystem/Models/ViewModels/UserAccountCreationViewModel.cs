@@ -10,7 +10,8 @@ namespace GatePassManagementSystem.Models.ViewModels
         [Required(ErrorMessage = "Please Enter the Employee Name")]
         public string? EmployeeName { get; set; }
 
-        [Required(ErrorMessage = "Please Enter the Username(EPF)")]
+        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter the Username (EPF)")]
         public int Username { get; set; }
 
         [Required(ErrorMessage = "Please Enter the Password")]

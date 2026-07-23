@@ -34,6 +34,24 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Guardroomverificationportal" asp-action="index">Guardroom verification portalController</a>
                         </li>
+
+                        <li class="nav-item dropdown" style="padding-top:0.6%;padding-left:0.5%">
+
+                            <a class="text-decoration-none NavBarTextColor dropdown-toggle" data-bs-toggle="dropdown"
+                               aria-expanded="false" role="button" style="color:black;">Admin</a>
+
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a class="dropdown-item" asp-controller="UserAccountCreationPage" asp-action="index">Create User Accounts</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Manage User Accounts</a>
+                                </li>
+
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -57,6 +75,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!--my code-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

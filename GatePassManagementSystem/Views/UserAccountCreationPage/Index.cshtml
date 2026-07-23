@@ -204,7 +204,7 @@
 
                             <!-- Dropdown -->
                             <select class="form-select custom-select" asp-for="UserRole">
-                                <option selected>Select User Role</option>
+                                <option value="">Select User Role</option>
                                 <option>Admin</option>
                                 <option>Normal</option>
                                 <option>Guardroom</option>
@@ -264,7 +264,7 @@
 
                             <!-- Department Dropdown -->
                             <select class="form-select custom-select" asp-for="DPM">
-                                <option selected>Select Department</option>
+                                <option value="">Select Department</option>
                                 <option>HR</option>
                                 <option>IT</option>
                                 <option>Finance</option>
@@ -319,7 +319,7 @@
 
                             <!-- Dropdown -->
                             <select class="form-select custom-select" asp-for="UserRoleType">
-                                <option selected>Select User Role</option>
+                                <option value="">Select User Role</option>
                                 <option>Normal</option>
                                 <option>Special</option>
                                 
@@ -395,7 +395,7 @@
 
                             <!-- Dropdown -->
                             <select class="form-select custom-select" asp-for="ReportingManager">
-                                <option selected>Select Reporting Manager</option>
+                                <option value="">Select Reporting Manager</option>
                                 <option>Dulantha Weerasinghe</option>
                                 <option>Yashodani Nedurana</option>
                                 <option>Thissa Mahanpitiya</option>
@@ -429,5 +429,27 @@
     </div>
 
    
-    
+   
 </form>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        Swal.fire({
+            title: "Success!",
+            text: "@TempData["SuccessMessage"]",
+            icon: "success",
+            confirmButtonText: "OK"
+        });
+    </script>
+}
+
+<!--my code-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+@* @if (TempData["SuccessMessage"] != null)
+{
+    <h3 style="color:green">
+        @TempData["SuccessMessage"]
+    </h3>
+} *@
