@@ -60,7 +60,7 @@ namespace GatePassManagementSystem.Controllers
                     _AppDb.TblUserAccountDetails.Add(TblUserAccountDetails);
                     await _AppDb.SaveChangesAsync();
 
-                    TempData["SuccessMessage"] = "User account created successfully!";
+                    //TempData["SuccessMessage"] = "User account created successfully!";
 
                     return RedirectToAction("index", "UserAccountCreationPage");
                 }

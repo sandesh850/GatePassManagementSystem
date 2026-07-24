@@ -1,5 +1,5 @@
 ﻿@{
-    @model GatePassManagementSystem.Models.ViewModels.UserAccountCreationViewModel;
+    @model GatePassManagementSystem.Models.ViewModels.ManageUserACCViewModel;
 }
 
 
@@ -47,7 +47,7 @@
             <div class="row" style="padding-top:3%">
 
                 <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
-                    <label style="font-weight:bold;font-size:140%">Create User Account</label>
+                    <label style="font-weight:bold;font-size:140%">Manage User Accounts</label>
                 </div>
 
             </div>
@@ -75,9 +75,9 @@
                             <img id="previewImage"
                                  src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
                                  alt="photo">
-                            
+
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
@@ -99,11 +99,55 @@
                                id="photoInput"
                                accept="image/*"
                                hidden asp-for="EmployeePhoto">
-                               
 
+                               
                     </div>
                     <span asp-validation-for="EmployeePhoto" class="text-danger"></span>
                 </div>
+            </div>
+
+            <!--New component-->
+            <!--Search bar-->
+            <div>
+                <div class="row" style="padding-top:5%">
+
+                    <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div>
+                    <div class="col-8 col-md-8 col-sm-8 col-xl-8 col-xxl-8 text-start">
+                       
+                        <div style="padding-top:2%">
+                            <div class="position-relative">
+                                <input type="text" class="form-control ps-5" placeholder="Search By Using EPF" />
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="20"
+                                     height="20"
+                                     fill="gray"
+                                     class="position-absolute top-50 start-0 translate-middle-y ms-2"
+                                     viewBox="0 0 16 16">
+
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.414-1.414l-3.866-3.834zm-5.242.656a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" />
+
+                                </svg>
+
+                            </div>
+                            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    @* <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div> *@
+                    <div class="col-3 col-md-3 col-sm-3 col-xl-3 col-xxl-3 text-start">
+                        <div style="padding-top:6%">
+                            <button type="submit" class="btn btn-primary"
+                                    style="width:90%; height:100%; font-size:100%; letter-spacing:0px; border-radius:8px;">
+
+                                Search
+
+                            </button>
+                        </div>
+                    </div>
+
+               
+                </div>
+
             </div>
 
             <!--row 7 | Employee name & username (EPF)-->
@@ -122,7 +166,7 @@
                                  viewBox="0 0 24 24">
                                 <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z" />
                             </svg>
-                           
+
                         </div>
                         <span asp-validation-for="EmployeeName" class="text-danger"></span>
                     </div>
@@ -277,7 +321,7 @@
                             </select>
 
                         </div>
-                       @*  <div class="position-relative">
+                        @*  <div class="position-relative">
                             <select class="form-select">
                                 <option selected>Select Department</option>
                                 <option>Sewing</option>
@@ -322,18 +366,18 @@
                                 <option value="">Select User Role</option>
                                 <option>Normal</option>
                                 <option>Special</option>
-                                
+
                             </select>
 
                         </div>
 
-                       @*  <div class="position-relative">
+                        @*  <div class="position-relative">
                             <div class="position-relative">
                                 <select class="form-select">
                                     <option selected>Select User Role Type</option>
                                     <option>special</option>
                                     <option>Normal</option>
-                                   
+
                                 </select>
 
                             </div>
@@ -409,22 +453,53 @@
             </div>
 
            
-            <!--row 10 | btnCreateAccount-->
+            <!--row 10 | Action buttons-->
             <div class="row" style="padding-top:4%;padding-bottom:4%">
 
-                <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12">
+                <!--btnUpdate-->
+                <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-xxl-6" style="padding-left:10%">
 
-                    <button type="submit" class="btn btn-primary"
-                            style="font-weight:bold;width:90%; height:100%; font-size:110%; letter-spacing:2px; border-radius:15px;">
+                    <button type="submit" class="btn btn-warning"
+                            style="font-weight:bold;width:90%; height:100%; font-size:110%; letter-spacing:2px; border-radius:8px;">
 
-                        Create Account
+                        <!-- Pencil Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="20" height="20"
+                             fill="currentColor"
+                             viewBox="0 0 16 16"
+                             style="margin-right:8px;">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10L2 14l.146-3.854 10-10zM11.207 2.5 3 10.707V13h2.293L13.5 4.793 11.207 2.5z" />
+                        </svg>
+                        Update
+
+                    </button>
+
+                </div>
+
+                <!--btnRemove-->
+                <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-xxl-6">
+
+                    <button type="submit" class="btn btn-danger"
+                            style="font-weight:bold;width:75%; height:100%; font-size:110%; letter-spacing:2px; border-radius:8px;">
+                        <!-- Bin Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="20" height="20"
+                             fill="currentColor"
+                             viewBox="0 0 16 16"
+                             style="margin-right:8px;">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5z" />
+                            <path d="M8 5.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5z" />
+                            <path d="M10.5 5.5A.5.5 0 0 1 11 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5z" />
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1 0-2H5V1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h2.5a1 1 0 0 1 1 1zM6 1v1h4V1H6zM4 4v9a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4H4z" />
+                        </svg>
+                        Remove
 
                     </button>
 
                 </div>
             </div>
-           
 
+           
         </div>
     </div>
 
