@@ -20,8 +20,8 @@ namespace GatePassManagementSystem.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            
-            return View();
+            //ViewBag.DPM = "Select Department";
+            return View(new ManageUserACCViewModel());
         }
 
         public TblUserAccountDetails? DST_TblUserAccount_details {  get; set; }
@@ -41,16 +41,22 @@ namespace GatePassManagementSystem.Controllers
             }
             else
             {
-                string imageBase64 = Convert.ToBase64String(result.EmployeePhoto);
-                ViewBag.EmployeeImage = imageBase64;
-                ViewBag.EmployeeName = result.EmployeeName;
-                ViewBag.Username = result.Username;
-                ViewBag.Password = result.Password;
-                ViewBag.UserRole = result.UserRole;
-                ViewBag.DPM = result.DPM;
-                ViewBag.UserRoleType = result.UserRoleType;
-                ViewBag.ReportingSupervisor = result.ReportingSupervisor;
-                ViewBag.ReportingManager = result.ReportingManager;
+                if(result.EmployeePhoto != null)
+                {
+                    string imageBase64 = Convert.ToBase64String(result.EmployeePhoto);
+                    ViewBag.EmployeeImage = imageBase64;
+                    ViewBag.EmployeeName = result.EmployeeName;
+                    ViewBag.Username = result.Username;
+                    ViewBag.Password = result.Password;
+                    ViewBag.UserRole = result.UserRole;
+                    ViewBag.DPM = result.DPM;
+                    ViewBag.UserRoleType = result.UserRoleType;
+                    ViewBag.ReportingSupervisor = result.ReportingSupervisor;
+                    ViewBag.ReportingManager = result.ReportingManager;
+                }
+
+               
+                
 
             }
 

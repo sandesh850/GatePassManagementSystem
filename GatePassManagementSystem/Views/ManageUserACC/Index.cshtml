@@ -250,7 +250,7 @@
 
                             <!-- Dropdown -->
                             <select class="form-select custom-select">
-                                <option value="@ViewBag.UserRole">Select User Role></option>
+                                <option value="">@ViewBag.UserRole</option>
                                 <option>Admin</option>
                                 <option>Normal</option>
                                 <option>Guardroom</option>
@@ -309,9 +309,9 @@
                             </span>
 
                             <!-- Department Dropdown -->
-                            <select class="form-select custom-select" asp-for="DPM">
+                            <select class="form-select custom-select" asp-for="DPM" placeholder="Select Department">
                                 
-                                <option value="@ViewBag.DPM"></option>
+                                <option value="">@ViewBag.DPM</option>
                                 <option>HR</option>
                                 <option>IT</option>
                                 <option>Finance</option>
@@ -366,7 +366,7 @@
 
                             <!-- Dropdown -->
                             <select class="form-select custom-select" asp-for="UserRoleType">
-                                <option value="@ViewBag.UserRoleType">Select User Role></option>
+                                <option value="">@ViewBag.UserRoleType</option>
                                 <option>Normal</option>
                                 <option>Special</option>
 
@@ -442,7 +442,7 @@
 
                             <!-- Dropdown -->
                             <select class="form-select custom-select" asp-for="ReportingManager">
-                                <option value="@ViewBag.ReportingManager">Select Reporting Manager></option>
+                                <option value="">@ViewBag.ReportingManager</option>
                                 <option>Dulantha Weerasinghe</option>
                                 <option>Yashodani Nedurana</option>
                                 <option>Thissa Mahanpitiya</option>
