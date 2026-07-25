@@ -10,7 +10,7 @@ namespace GatePassManagementSystem.Models.ViewModels
         
         public IFormFile? EmployeePhoto { get; set; }
 
-       
+
         public string? EmployeeName { get; set; }
 
        

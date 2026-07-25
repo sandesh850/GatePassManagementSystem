@@ -73,7 +73,9 @@
 
                             <!-- Preview Image -->
                             <img id="previewImage"
-                                 src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                 src="@(ViewBag.EmployeeImage != null
+                                      ? "data:image/png;base64," + ViewBag.EmployeeImage
+                                      : "https://cdn-icons-png.flaticon.com/512/149/149071.png")"
                                  alt="photo">
 
                         </div>
@@ -136,7 +138,7 @@
                     @* <div class="col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1"></div> *@
                     <div class="col-3 col-md-3 col-sm-3 col-xl-3 col-xxl-3 text-start">
                         <div style="padding-top:6%">
-                            <button type="submit" class="btn btn-primary"
+                            <button type="submit" value="search" class="btn btn-primary"
                                     style="width:90%; height:100%; font-size:100%; letter-spacing:0px; border-radius:8px;">
 
                                 Search
@@ -160,7 +162,7 @@
                     </div>
                     <div style="padding-top:2%">
                         <div class="position-relative">
-                            <input type="text" class="form-control ps-5" placeholder="Employee Name" asp-for="EmployeeName" />
+                            <input type="text" class="form-control ps-5" placeholder="Employee Name" asp-for="EmployeeName" value="@ViewBag.EmployeeName"/>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
                                  class="position-absolute top-50 start-0 translate-middle-y ms-2"
                                  viewBox="0 0 24 24">
@@ -179,14 +181,14 @@
                     </div>
                     <div style="padding-top:2%">
                         <div class="position-relative">
-                            <input type="text" class="form-control ps-5" placeholder="Enter EPF Number" asp-for="Username" />
+                            <input type="text" class="form-control ps-5" placeholder="Enter EPF Number" asp-for="Username" value="@ViewBag.Username" />
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
                                  class="position-absolute top-50 start-0 translate-middle-y ms-2"
                                  viewBox="0 0 24 24">
                                 <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z" />
                             </svg>
                         </div>
-                        <span asp-validation-for="Username" class="text-danger"></span>
+                        @* <span asp-validation-for="Username" class="text-danger"></span> *@
                     </div>
                 </div>
 
@@ -204,7 +206,7 @@
                     </div>
                     <div style="padding-top:2%">
                         <div class="position-relative">
-                            <input type="password" asp-for="Password" class="form-control ps-5" placeholder="Enter Password" />
+                            <input type="password" asp-for="Password" class="form-control ps-5" placeholder="Enter Password" value="@ViewBag.Password" />
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
                                  class="position-absolute top-50 start-0 translate-middle-y ms-2"
                                  viewBox="0 0 24 24">
@@ -247,8 +249,8 @@
                             </span>
 
                             <!-- Dropdown -->
-                            <select class="form-select custom-select" asp-for="UserRole">
-                                <option value="">Select User Role</option>
+                            <select class="form-select custom-select">
+                                <option value="@ViewBag.UserRole">Select User Role></option>
                                 <option>Admin</option>
                                 <option>Normal</option>
                                 <option>Guardroom</option>
@@ -308,7 +310,8 @@
 
                             <!-- Department Dropdown -->
                             <select class="form-select custom-select" asp-for="DPM">
-                                <option value="">Select Department</option>
+                                
+                                <option value="@ViewBag.DPM"></option>
                                 <option>HR</option>
                                 <option>IT</option>
                                 <option>Finance</option>
@@ -363,7 +366,7 @@
 
                             <!-- Dropdown -->
                             <select class="form-select custom-select" asp-for="UserRoleType">
-                                <option value="">Select User Role</option>
+                                <option value="@ViewBag.UserRoleType">Select User Role></option>
                                 <option>Normal</option>
                                 <option>Special</option>
 
@@ -402,7 +405,7 @@
                     </div>
                     <div style="padding-top:2%">
                         <div class="position-relative">
-                            <input type="text" class="form-control ps-5" asp-for="ReportingSupervisor" placeholder="Enter Supervisor Name" />
+                            <input type="text" class="form-control ps-5" asp-for="ReportingSupervisor" placeholder="Enter Supervisor Name" value="@ViewBag.ReportingSupervisor" />
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"
                                  class="position-absolute top-50 start-0 translate-middle-y ms-2"
                                  viewBox="0 0 24 24">
@@ -439,7 +442,7 @@
 
                             <!-- Dropdown -->
                             <select class="form-select custom-select" asp-for="ReportingManager">
-                                <option value="">Select Reporting Manager</option>
+                                <option value="@ViewBag.ReportingManager">Select Reporting Manager></option>
                                 <option>Dulantha Weerasinghe</option>
                                 <option>Yashodani Nedurana</option>
                                 <option>Thissa Mahanpitiya</option>
@@ -459,7 +462,7 @@
                 <!--btnUpdate-->
                 <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-xxl-6" style="padding-left:10%">
 
-                    <button type="submit" class="btn btn-warning"
+                    <button type="submit" value="update" class="btn btn-warning"
                             style="font-weight:bold;width:90%; height:100%; font-size:110%; letter-spacing:2px; border-radius:8px;">
 
                         <!-- Pencil Icon -->

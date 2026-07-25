@@ -20,7 +20,8 @@ namespace GatePassManagementSystem.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(new ManageUserACCViewModel());
+            
+            return View();
         }
 
         public TblUserAccountDetails? DST_TblUserAccount_details {  get; set; }
@@ -32,7 +33,7 @@ namespace GatePassManagementSystem.Controllers
             //        .FirstOrDefaultAsync(x => x.Username == Convert.ToInt16(Model.SearchingEPF));
 
             var result = await _AppDb.TblUserAccountDetails
-                .FirstOrDefaultAsync(x => x.Username == Convert.ToInt16(Model.SearchingEPF));
+                .FirstOrDefaultAsync(x => x.Username == Convert.ToInt32(Model.SearchingEPF));
 
             if (result == null)
             {
@@ -40,7 +41,17 @@ namespace GatePassManagementSystem.Controllers
             }
             else
             {
-                Model.EmployeeName = result.EmployeeName;
+                string imageBase64 = Convert.ToBase64String(result.EmployeePhoto);
+                ViewBag.EmployeeImage = imageBase64;
+                ViewBag.EmployeeName = result.EmployeeName;
+                ViewBag.Username = result.Username;
+                ViewBag.Password = result.Password;
+                ViewBag.UserRole = result.UserRole;
+                ViewBag.DPM = result.DPM;
+                ViewBag.UserRoleType = result.UserRoleType;
+                ViewBag.ReportingSupervisor = result.ReportingSupervisor;
+                ViewBag.ReportingManager = result.ReportingManager;
+
             }
 
             return View(Model);
