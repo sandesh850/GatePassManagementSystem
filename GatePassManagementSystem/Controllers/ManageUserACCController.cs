@@ -27,7 +27,7 @@ namespace GatePassManagementSystem.Controllers
         public TblUserAccountDetails? DST_TblUserAccount_details {  get; set; }
 
         [HttpPost]
-        public async Task<IActionResult> Index(ManageUserACCViewModel Model)
+        public async Task<IActionResult> Search(ManageUserACCViewModel Model)
         {
             //DST_TblUserAccount_details = await _AppDb.TblUserAccountDetails
             //        .FirstOrDefaultAsync(x => x.Username == Convert.ToInt16(Model.SearchingEPF));
@@ -60,7 +60,8 @@ namespace GatePassManagementSystem.Controllers
 
             }
 
-            return View(Model);
+
+            return View("Index", Model);
 
             //return RedirectToAction("Index", "ManageUserACC");
 
@@ -77,6 +78,29 @@ namespace GatePassManagementSystem.Controllers
             //}
 
 
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Update(ManageUserACCViewModel model)
+        {
+            var result = await _AppDb.TblUserAccountDetails
+                .FirstOrDefaultAsync(x => x.Username == Convert.ToInt32(model.SearchingEPF));
+
+            if (result == null)
+                return NotFound();
+
+            result.EmployeeName = model.EmployeeName;
+            result.Password = model.Password;
+            result.DPM = ViewBag.DPM;
+            result.UserRole = model.UserRole;
+            result.UserRoleType = model.UserRoleType;
+            result.ReportingSupervisor = model.ReportingSupervisor;
+            result.ReportingManager = model.ReportingManager;
+
+            await _AppDb.SaveChangesAsync();
+
+            return RedirectToAction("Index");
         }
     }
 }
