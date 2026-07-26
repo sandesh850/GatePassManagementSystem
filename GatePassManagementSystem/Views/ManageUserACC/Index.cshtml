@@ -249,8 +249,9 @@
                             </span>
 
                             <!-- Dropdown -->
-                            <select class="form-select custom-select">
-                                <option value="">@ViewBag.UserRole</option>
+                            <select class="form-select custom-select" asp-for="UserRole">
+                                
+                                <option>@ViewBag.UserRole</option>
                                 <option>Admin</option>
                                 <option>Normal</option>
                                 <option>Guardroom</option>
@@ -311,7 +312,7 @@
                             <!-- Department Dropdown -->
                             <select class="form-select custom-select" asp-for="DPM" placeholder="Select Department">
                                 
-                                <option value="">@ViewBag.DPM</option>
+                                <option>@ViewBag.DPM</option>
                                 <option>HR</option>
                                 <option>IT</option>
                                 <option>Finance</option>
@@ -365,8 +366,8 @@
                             </span>
 
                             <!-- Dropdown -->
-                            <select class="form-select custom-select" asp-for="UserRoleType">
-                                <option value="">@ViewBag.UserRoleType</option>
+                            <select class="form-select custom-select" asp-for="UserRoleType" placeholder="Select User Role Type">
+                                <option>@ViewBag.UserRoleType</option>
                                 <option>Normal</option>
                                 <option>Special</option>
 
@@ -441,8 +442,9 @@
                             </span>
 
                             <!-- Dropdown -->
-                            <select class="form-select custom-select" asp-for="ReportingManager">
-                                <option value="">@ViewBag.ReportingManager</option>
+                            <select class="form-select custom-select" asp-for="ReportingManager" placeholder="Select Reporting Manager">
+                                
+                                <option>@ViewBag.ReportingManager</option>
                                 <option>Dulantha Weerasinghe</option>
                                 <option>Yashodani Nedurana</option>
                                 <option>Thissa Mahanpitiya</option>
@@ -482,7 +484,7 @@
                 <!--btnRemove-->
                 <div class="col-6 col-sm-6 col-md-6 col-xl-6 col-xxl-6">
 
-                    <button type="submit" class="btn btn-danger"
+                    <button type="submit" class="btn btn-danger" asp-action="Remove"
                             style="font-weight:bold;width:75%; height:100%; font-size:110%; letter-spacing:2px; border-radius:8px;">
                         <!-- Bin Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg"

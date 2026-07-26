@@ -26,12 +26,14 @@ namespace GatePassManagementSystem.Controllers
 
         public TblUserAccountDetails? DST_TblUserAccount_details {  get; set; }
 
+        // Use to search record
         [HttpPost]
         public async Task<IActionResult> Search(ManageUserACCViewModel Model)
         {
             //DST_TblUserAccount_details = await _AppDb.TblUserAccountDetails
             //        .FirstOrDefaultAsync(x => x.Username == Convert.ToInt16(Model.SearchingEPF));
 
+            
             var result = await _AppDb.TblUserAccountDetails
                 .FirstOrDefaultAsync(x => x.Username == Convert.ToInt32(Model.SearchingEPF));
 
@@ -53,6 +55,14 @@ namespace GatePassManagementSystem.Controllers
                     ViewBag.UserRoleType = result.UserRoleType;
                     ViewBag.ReportingSupervisor = result.ReportingSupervisor;
                     ViewBag.ReportingManager = result.ReportingManager;
+
+
+                    Model.UserRole = result.UserRole;
+                    Model.DPM = result.DPM;
+                    Model.UserRoleType = result.UserRoleType;
+                    Model.ReportingManager = result.ReportingManager;
+                    Model.ReportingSupervisor = result.ReportingSupervisor;
+
                 }
 
                
@@ -60,7 +70,7 @@ namespace GatePassManagementSystem.Controllers
 
             }
 
-
+            ModelState.Clear();
             return View("Index", Model);
 
             //return RedirectToAction("Index", "ManageUserACC");
@@ -80,7 +90,7 @@ namespace GatePassManagementSystem.Controllers
 
         }
 
-
+        // Use to update record
         [HttpPost]
         public async Task<IActionResult> Update(ManageUserACCViewModel model)
         {
@@ -90,14 +100,42 @@ namespace GatePassManagementSystem.Controllers
             if (result == null)
                 return NotFound();
 
+            byte[]? UpdatedIMG = null;
+
+            if (model.EmployeePhoto != null)
+            {
+                using (var inputImage = new MemoryStream())
+                {
+                    await model.EmployeePhoto.CopyToAsync(inputImage);
+                    UpdatedIMG = inputImage.ToArray();
+                }
+            }
+
+            result.EmployeePhoto = UpdatedIMG;
             result.EmployeeName = model.EmployeeName;
             result.Password = model.Password;
-            result.DPM = ViewBag.DPM;
+            result.DPM = model.DPM;
             result.UserRole = model.UserRole;
             result.UserRoleType = model.UserRoleType;
             result.ReportingSupervisor = model.ReportingSupervisor;
             result.ReportingManager = model.ReportingManager;
 
+            await _AppDb.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        // Use Remove data
+        [HttpPost]
+        public async Task<IActionResult> Remove(ManageUserACCViewModel model)
+        {
+            var result = await _AppDb.TblUserAccountDetails
+                .FirstOrDefaultAsync(x => x.Username == Convert.ToInt32(model.SearchingEPF));
+
+            if (result == null)
+                return NotFound();
+
+            _AppDb.TblUserAccountDetails.Remove(result);
             await _AppDb.SaveChangesAsync();
 
             return RedirectToAction("Index");
